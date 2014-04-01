@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{499EEB18-C1FC-4012-BBCC-A71958100800}</ProjectGuid>
+    <SchemaVersion>2</SchemaVersion>
+    <AlreadyCompiled>false</AlreadyCompiled>
+    <UseHostCompilerIfAvailable>false</UseHostCompilerIfAvailable>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>0.0.00001</ProductVersion>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>SaltarelleBox2dWeb</AssemblyName>
+    <NoStdLib>True</NoStdLib>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineConstants>TRACE;DEBUG;TARGET_JAVASCRIPT;WEBWORKER</DefineConstants>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineConstants>TRACE;TARGET_JAVASCRIPT;WEBWORKER</DefineConstants>
+    <Optimize>true</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Box2DWeb\B2Vec2.cs" />
+    <Compile Include="Box2DWeb\B2World.cs" />
+    <Compile Include="Box2DWeb\B2Body.cs" />
+    <Compile Include="Box2DWeb\B2Transform.cs" />
+    <Compile Include="Box2DWeb\B2Fixture.cs" />
+    <Compile Include="Box2DWeb\B2Collision.cs" />
+    <Compile Include="Box2DWeb\B2Mat22.cs" />
+    <Compile Include="Box2DWeb\B2Shape.cs" />
+    <Compile Include="Box2DWeb\B2CircleShape.cs" />
+    <Compile Include="Box2DWeb\B2PolygonShape.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>false</AutoGen>
+      <DesignTimeSharedInput>false</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib">
+      <HintPath>$(SolutionDir)packages\Saltarelle.Runtime.2.4.0\tools\Assemblies\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Saltarelle.Web">
+      <HintPath>..\packages\Saltarelle.Web.3.0.1\lib\Saltarelle.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Box2DWeb\js\Box2dWeb-2.1.a.3.js" />
+    <Content Include="Box2DWeb\js\Box2dWeb-2.1.a.3.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" Condition="!Exists('$(SolutionDir)packages\Saltarelle.Compiler.2.4.0\tools\Saltarelle.Compiler.targets')" />
+  <Import Project="$(SolutionDir)packages\Saltarelle.Compiler.2.4.0\tools\Saltarelle.Compiler.targets" Condition="Exists('$(SolutionDir)packages\Saltarelle.Compiler.2.4.0\tools\Saltarelle.Compiler.targets')" />
+</Project>
